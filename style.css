@@ -36,6 +36,9 @@ header .title {
   padding-bottom: 0.5rem;
 }
 
+footer {
+  padding-bottom: 2rem;
+}
 footer a {
   color: var(--color-white-faded);
 }
