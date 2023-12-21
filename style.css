@@ -20,6 +20,7 @@ body {
   color: white;
   display: grid;
   font-family: Arial, Helvetica, sans-serif;
+  gap: 2rem;
   height: 100svh;
   justify-content: center;
   padding: 2rem;
@@ -66,7 +67,7 @@ footer a {
 }
 .tools-wrapper .tools-panel .tools-image {
   border-radius: 1rem;
-  max-height: 20rem;
+  max-height: 15rem;
   max-width: 100%;
 }
 
