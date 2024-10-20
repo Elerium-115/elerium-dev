@@ -26,12 +26,12 @@ body {
   padding: 2rem;
 }
 
-header, footer {
+.section-header, footer {
   color: var(--color-white-faded);
   text-align: center;
 }
 
-header .title {
+.section-header .title {
   color: white;
   padding-bottom: 0.5rem;
 }
@@ -44,11 +44,16 @@ footer a {
 }
 
 .tools-wrapper {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
 }
 .tools-wrapper .tools-panel {
   border-radius: 1rem;
+  flex: 50%;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
   padding: 2rem;
   text-align: center;
   text-transform: uppercase;
@@ -57,12 +62,17 @@ footer a {
   background-color: rgba(255, 255, 255, 0.1);
 }
 .tools-wrapper .tools-panel::before {
-  content: "Tools for";
   display: block;
   font-size: 0.8rem;
   line-height: 100%;
   color: var(--color-white-faded);
   padding-bottom: 0.5rem;
+}
+.tools-wrapper .tools-panel.-tools-for::before {
+  content: "Tools for";
+}
+.tools-wrapper .tools-panel.-ai-music::before {
+  content: "AI music";
 }
 .tools-wrapper .tools-panel .tools-for-product {
   font-weight: 700;
@@ -77,7 +87,6 @@ footer a {
 /* orientation PORTRAIT */
 @media (orientation: portrait) {
   .tools-wrapper {
-    grid-template-columns: unset;
-    grid-template-rows: repeat(2, 1fr);
+    flex-direction: column;
   }
 }/*# sourceMappingURL=style.css.map */

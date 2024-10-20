@@ -26,12 +26,12 @@ body {
     padding: 2rem;
 }
 
-header, footer {
+.section-header, footer {
     color: var(--color-white-faded);
     text-align: center;
 }
 
-header {
+.section-header {
     .title {
         color: white;
         padding-bottom: 0.5rem;
@@ -47,11 +47,15 @@ footer {
 }
 
 .tools-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
 
     .tools-panel {
         border-radius: 1rem;
+        flex: 50%;
+        max-width: fit-content;
         padding: 2rem;
         text-align: center;
         text-transform: uppercase;
@@ -61,13 +65,15 @@ footer {
         }
 
         &::before {
-            content: 'Tools for';
             display: block;
             font-size: 0.8rem;
             line-height: 100%;
             color: var(--color-white-faded);
             padding-bottom: 0.5rem;
         }
+
+        &.-tools-for::before { content: 'Tools for'; }
+        &.-ai-music::before { content: 'AI music'; }
 
         .tools-for-product {
             font-weight: 700;
@@ -85,7 +91,6 @@ footer {
 /* orientation PORTRAIT */
 @media (orientation: portrait) {
     .tools-wrapper {
-        grid-template-columns: unset;
-        grid-template-rows: repeat(2, 1fr);
+        flex-direction: column;
     }
 }
